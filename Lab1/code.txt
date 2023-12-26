@@ -1,0 +1,1781 @@
+Лістинг коду:
+
+//Client.cpp
+
+#include "Client.h"
+
+#include <iostream>
+
+#include <string>
+
+
+
+using namespace std;
+
+namespace Records {
+
+Client::Client() {
+
+  mFirstName = "";
+
+  mLastName = "";
+
+  mClientAge = 18;
+
+  mClientNumber = -1;
+
+  mSalary = kDefaultStartingSalary;
+
+  fHired = false;
+
+  // Initialize new member variables
+
+  mGender = "";
+
+  mHeight = 0;
+
+  mWeight = 0;
+
+  mChildrenCount = 0;
+
+  mMaritalStatus = "";
+
+  mHarmfulHabits = "";
+
+  mHobbies = "";
+
+  mDescription = "";
+
+  mZodiacSignCode = "";
+
+  mRelationshipCode = "";
+
+  mNationalityCode = "";
+
+  mAddress = "";
+
+  mPhoneNumber = "";
+
+  mPassportData = "";
+
+  mPartnerPreference = "";
+
+}
+
+void Client::promote(int inRaiseAmount) {
+
+  setSalary(getSalary() + inRaiseAmount);
+
+}
+
+void Client::demote(int inDemeritAmount) {
+
+  setSalary(getSalary() - inDemeritAmount);
+
+}
+
+void Client::hire() { fHired = true; }
+
+void Client::fire() { fHired = false; }
+
+void Client::display() {
+
+  cout << "Client: \n" << getLastName() << ", " << getFirstName() <<", Age: "<<getClientAge()<<", Gender: "<<getGender() << ", Height: " <<  getHeight() << ", Weight: "
+
+    << getWeight()<<", Chidren:" <<getChildrenCount()<<", Marital status: "    <<getMaritalStatus()<<", Harmful Habits: "<<getHarmfulHabits()<<", Hobbies: "<<getHobbies()<< ", \nAbout me: "
+
+    <<getDescription()<<", Zodiac: "<< getZodiacSignCode()<<", Relationship: "<<getRelationshipCode()<<", Nationality: "<<getNationalityCode()<<", \nAddress: "<<getAddress()
+
+    <<", Phone: "<< getPhoneNumber()<<", Passport Data: "<< getPassportData()
+
+    <<", \nPartner Preference: "<<getPartnerPreference()<< endl;
+
+  cout << "-------------------------" << endl;
+
+  cout << (fHired ? "Current Client" : "Former Client") << endl;
+
+  cout << "Client Number: " << getClientNumber() << endl;
+
+  cout << "Subscription price: $" << getSalary() << endl;
+
+  cout << endl;
+
+}
+
+// Accessors and setters
+
+void Client::setFirstName(string inFirstName) { mFirstName = inFirstName; }
+
+string Client::getFirstName() { return mFirstName; }
+
+void Client::setLastName(string inLastName){
+
+  mLastName = inLastName;
+
+}
+
+string Client::getLastName() { return mLastName; }
+
+
+
+void Client::setClientAge(uint inClientAge)
+
+{
+
+  mClientAge = inClientAge;
+
+}
+
+uint Client::getClientAge() { return mClientAge; }
+
+//-----------------------------------------
+
+void Client::setGender(string inGender)
+
+{
+
+  mGender = inGender;
+
+}
+
+string Client::getGender() { return mGender; }
+
+
+
+
+
+void Client::setHeight(uint inHeight)
+
+{
+
+  mHeight = inHeight;
+
+}
+
+uint Client::getHeight() { return mHeight; }
+
+
+
+void Client::setWeight(uint inWeight)
+
+{
+
+  mWeight = inWeight;
+
+}
+
+uint Client::getWeight() { return mWeight; }
+
+
+
+void Client::setChildrenCount(uint inChildrenCount)
+
+{
+
+  mChildrenCount = inChildrenCount;
+
+}
+
+uint Client::getChildrenCount() { return mChildrenCount; }
+
+
+
+
+
+void Client::setMaritalStatus(string inMaritalStatus)
+
+{
+
+  mMaritalStatus = inMaritalStatus;
+
+}
+
+string Client::getMaritalStatus() { return mMaritalStatus; }
+
+
+
+void Client::setHarmfulHabits(string inHarmfulHabits)
+
+{
+
+  mHarmfulHabits = inHarmfulHabits;
+
+}
+
+string Client::getHarmfulHabits() { return mHarmfulHabits; }
+
+
+
+void Client::setHobbies(string inHobbies)
+
+{
+
+  mHobbies = inHobbies;
+
+}
+
+string Client::getHobbies() { return mHobbies; }
+
+
+
+
+
+void Client::setDescription(string inDescription)
+
+{
+
+  mDescription = inDescription;
+
+}
+
+string Client::getDescription() { return mDescription; }
+
+
+
+
+
+void Client::setZodiacSignCode(string inZodiacSignCode)
+
+{
+
+  mZodiacSignCode = inZodiacSignCode;
+
+}
+
+string Client::getZodiacSignCode() { return mZodiacSignCode; }
+
+
+
+void Client::setRelationshipCode(string inRelationshipCode)
+
+{
+
+  mRelationshipCode = inRelationshipCode;
+
+}
+
+string Client::getRelationshipCode() { return mRelationshipCode; }
+
+
+
+
+
+
+
+void Client::setNationalityCode(string inNationalityCode)
+
+{
+
+  mNationalityCode = inNationalityCode;
+
+}
+
+string Client::getNationalityCode() { return mNationalityCode; }
+
+
+
+
+
+void Client::setAddress(string inAddress)
+
+{
+
+  mAddress = inAddress;
+
+}
+
+string Client::getAddress() { return mAddress; }
+
+
+
+void Client::setPhoneNumber(string inPhoneNumber)
+
+{
+
+  mPhoneNumber = inPhoneNumber;
+
+}
+
+string Client::getPhoneNumber() { return mPhoneNumber; }
+
+
+
+
+
+
+
+
+
+void Client::setPassportData(string inPassportData)
+
+{
+
+  mPassportData = inPassportData;
+
+}
+
+string Client::getPassportData() { return mPassportData; }
+
+
+
+
+
+
+
+void Client::setPartnerPreference(string inPartnerPreference)
+
+{
+
+  mPartnerPreference = inPartnerPreference;
+
+}
+
+string Client::getPartnerPreference() { return mPartnerPreference; }
+
+
+
+
+
+
+
+//-----------------------------------------
+
+
+
+void Client::setClientNumber(int inClientNumber) {
+
+  mClientNumber = inClientNumber;
+
+}
+
+int Client::getClientNumber() { return mClientNumber; }
+
+void Client::setSalary(int inSalary) { mSalary = inSalary; }
+
+int Client::getSalary() { return mSalary; }
+
+bool Client::getIsHired() { return fHired; }
+
+} // namespace Records
+
+
+
+//Client.h
+
+#include <iostream>
+
+
+
+namespace Records {
+
+const int kDefaultStartingSalary = 100;
+
+class Client {
+
+public:
+
+  Client();
+
+// Info_client client;
+
+  void promote(int inRaiseAmount = 10);
+
+  void demote(int inDemeritAmount = 10);
+
+  void hire();    // hires or re-hires the employee
+
+  void fire();    // dismisses the employee
+
+  void display(); // outputs employee info to the console
+
+  // Accessors and setters
+
+  void setFirstName(std::string inFirstName);
+
+  std::string getFirstName();
+
+  void setLastName(std::string inLastName);
+
+  std::string getLastName();
+
+  //its my
+
+  void setClientAge(uint inClientAge);
+
+  uint getClientAge();
+
+  //
+
+  void setClientNumber(int inClientNumber);
+
+  int getClientNumber();
+
+  void setSalary(int inNewSalary);
+
+  int getSalary();
+
+  bool getIsHired();
+
+  // New member variables
+
+  void setGender(std::string inGender);
+
+  std::string getGender();
+
+
+
+  void setHeight(uint inHeight);
+
+  uint getHeight();
+
+
+
+  void setWeight(uint inWeight);
+
+  uint getWeight();
+
+
+
+  void setChildrenCount(uint inChildrenCount);
+
+  uint getChildrenCount();
+
+
+
+  void setMaritalStatus(std::string inMaritalStatus);
+
+  std::string getMaritalStatus();
+
+
+
+  void setHarmfulHabits(std::string inHarmfulHabits);
+
+  std::string getHarmfulHabits();
+
+
+
+  void setHobbies(std::string inHobbies);
+
+  std::string getHobbies();
+
+
+
+  void setDescription(std::string inDescription);
+
+  std::string getDescription();
+
+
+
+  void setZodiacSignCode(std::string inZodiacSignCode);
+
+  std::string getZodiacSignCode();
+
+
+
+  void setRelationshipCode(std::string inRelationshipCode);
+
+  std::string getRelationshipCode();
+
+
+
+  void setNationalityCode(std::string inNationalityCode);
+
+  std::string getNationalityCode();
+
+
+
+  void setAddress(std::string inAddress);
+
+  std::string getAddress();
+
+
+
+  void setPhoneNumber(std::string inPhoneNumber);
+
+  std::string getPhoneNumber();
+
+
+
+  void setPassportData(std::string inPassportData);
+
+  std::string getPassportData();
+
+
+
+  void setPartnerPreference(std::string inPartnerPreference);
+
+  std::string getPartnerPreference();
+
+
+
+private:
+
+  std::string mFirstName;
+
+  std::string mLastName;
+
+  uint mClientAge;
+
+  int mClientNumber;
+
+  int mSalary;
+
+  bool fHired;
+
+  std::string mGender;
+
+  uint mHeight;
+
+  uint mWeight;
+
+  uint mChildrenCount;
+
+  std::string mMaritalStatus;
+
+  std::string mHarmfulHabits;
+
+  std::string mHobbies;
+
+  std::string mDescription;
+
+  std::string mZodiacSignCode;
+
+  std::string mRelationshipCode;
+
+  std::string mNationalityCode;
+
+  std::string mAddress;
+
+  std::string mPhoneNumber;
+
+  std::string mPassportData;
+
+  std::string mPartnerPreference;
+
+};
+
+} // namespace Records
+
+//Database.cpp
+
+#include "Database.h"
+
+#include <iostream>
+
+#include <stdexcept>
+
+#include <string>
+
+using namespace std;
+
+namespace Records {
+
+Database::Database() {
+
+  mNextSlot = 0;
+
+  mNextClientNumber = kFirstClientNumber;
+
+}
+
+
+
+Database::~Database() {}
+
+Client &Database::addClient(const ClientData &clientData) {
+
+  if (mNextSlot >= kMaxClients) {
+
+    cerr << "There is no more room to add the new Client!" << endl;
+
+    throw exception();
+
+  }
+
+Client &theClient = mClients[mNextSlot++];
+
+        theClient.setFirstName(clientData.inFirstName);
+
+        theClient.setLastName(clientData.inLastName);
+
+        theClient.setClientAge(clientData.inClientAge);
+
+        theClient.setClientNumber(mNextClientNumber++);
+
+        theClient.hire();
+
+        // Set the new member variables
+
+        theClient.setGender(clientData.inGender);
+
+        theClient.setHeight(clientData.inHeight);
+
+        theClient.setWeight(clientData.inWeight);
+
+        theClient.setChildrenCount(clientData.inChildrenCount);
+
+        theClient.setMaritalStatus(clientData.inMaritalStatus);
+
+        theClient.setHarmfulHabits(clientData.inHarmfulHabits);
+
+        theClient.setHobbies(clientData.inHobbies);
+
+        theClient.setDescription(clientData.inDescription);
+
+        theClient.setZodiacSignCode(clientData.inZodiacSignCode);
+
+        theClient.setRelationshipCode(clientData.inRelationshipCode);
+
+        theClient.setNationalityCode(clientData.inNationalityCode);
+
+        theClient.setAddress(clientData.inAddress);
+
+        theClient.setPhoneNumber(clientData.inPhoneNumber);
+
+        theClient.setPassportData(clientData.inPassportData);
+
+        theClient.setPartnerPreference(clientData.inPartnerPreference);
+
+
+
+        return theClient;
+
+}
+
+Client &Database::getClient(int inClientNumber) {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (mClients[i].getClientNumber() == inClientNumber) {
+
+      return mClients[i];
+
+    }
+
+  }
+
+  cerr << "No Client with Client number " << inClientNumber << endl;
+
+  throw exception();
+
+}
+
+Client &Database::getClient(const ClientData &clientData) {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (mClients[i].getFirstName() == clientData.inFirstName &&
+
+        mClients[i].getLastName() == clientData.inLastName &&
+
+        mClients[i].getClientAge() == clientData.inClientAge &&
+
+        mClients[i].getGender() == clientData.inGender &&
+
+        mClients[i].getHeight() == clientData.inHeight &&
+
+        mClients[i].getWeight() == clientData.inWeight &&
+
+        mClients[i].getChildrenCount() == clientData.inChildrenCount &&
+
+        mClients[i].getMaritalStatus() == clientData.inMaritalStatus &&
+
+        mClients[i].getHarmfulHabits() == clientData.inHarmfulHabits &&
+
+        mClients[i].getHobbies() == clientData.inHobbies &&
+
+        mClients[i].getDescription() == clientData.inDescription &&
+
+        mClients[i].getZodiacSignCode() == clientData.inZodiacSignCode &&
+
+        mClients[i].getRelationshipCode() == clientData.inRelationshipCode &&
+
+        mClients[i].getNationalityCode() == clientData.inNationalityCode &&
+
+        mClients[i].getAddress() == clientData.inAddress &&
+
+        mClients[i].getPhoneNumber() == clientData.inPhoneNumber &&
+
+        mClients[i].getPassportData() == clientData.inPassportData &&
+
+        mClients[i].getPartnerPreference() == clientData.inPartnerPreference) {
+
+      return mClients[i];
+
+    }
+
+  }
+
+  cerr << "No match with name " << clientData.inFirstName << " "
+
+  << clientData.inLastName << " "
+
+  << clientData.inClientAge << endl;
+
+    throw exception();
+
+}
+
+void Database::displayAll() {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    mClients[i].display();
+
+  }
+
+}
+
+void Database::displayMale() {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (mClients[i].getGender() == "male") {
+
+      mClients[i].display();
+
+    }
+
+  }
+
+}
+
+void Database::displayFemale() {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (mClients[i].getGender() == "female") {
+
+      mClients[i].display();
+
+    }
+
+  }
+
+}
+
+void Database::displayCurrent() {
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (mClients[i].getIsHired()) {
+
+      mClients[i].display();
+
+    }
+
+  }
+
+}
+
+void Database::displayFormer() {
+
+
+
+  for (int i = 0; i < mNextSlot; i++) {
+
+    if (!mClients[i].getIsHired()) {
+
+      mClients[i].display();
+
+    }
+
+  }
+
+}
+
+} // namespace Records
+
+//Database.h
+
+#include "Client.h"
+
+#include <iostream>
+
+namespace Records {
+
+const int kMaxClients = 100;
+
+const int kFirstClientNumber = 1000;
+
+struct ClientData{
+
+    std::string inFirstName;
+
+    std::string inLastName;
+
+    uint inClientAge;
+
+    std::string inGender;
+
+    uint inHeight;
+
+    uint inWeight;
+
+    uint inChildrenCount;
+
+    std::string inMaritalStatus;
+
+    std::string inHarmfulHabits;
+
+    std::string inHobbies;
+
+    std::string inDescription;
+
+    std::string inZodiacSignCode;
+
+    std::string inRelationshipCode;
+
+    std::string inNationalityCode;
+
+    std::string inAddress;
+
+    std::string inPhoneNumber;
+
+    std::string inPassportData;
+
+    std::string inPartnerPreference;
+
+};
+
+class Database {
+
+public:
+
+  Database();
+
+  ~Database();
+
+  Client &addClient(const ClientData &clientData) ;
+
+  Client &getClient(int inClienteNumber);
+
+  Client &getClient(const ClientData &clientData) ;
+
+  void displayAll();
+
+  void displayMale();
+
+  void displayFemale();
+
+  void displayCurrent();
+
+  void displayFormer();
+
+
+
+protected:
+
+  Client mClients[kMaxClients];
+
+  int mNextSlot;
+
+  int mNextClientNumber;
+
+};
+
+} // namespace Records
+
+
+
+//UserInterface.h
+
+#include "Database.h" // Включення заголовочного файлу для класу Database
+
+#include <string>
+
+
+
+// Прототипи функцій, які будуть використовуватися у файлі "UserInterface.cpp"
+
+using namespace std;
+
+using namespace Records;
+
+int displayMenu();
+
+void doHire(Database &inDB);
+
+void doFire(Database &inDB);
+
+void doPromote(Database &inDB);
+
+void doDemote(Database &inDB);
+
+// UserInterface.cpp
+
+#include "Database.h"
+
+#include <iostream>
+
+#include <stdexcept>
+
+#include <string>
+
+using namespace std;
+
+using namespace Records;
+
+int displayMenu();
+
+void doHire(Database &inDB);
+
+void doFire(Database &inDB);
+
+void doPromote(Database &inDB);
+
+void doDemote(Database &inDB);
+
+
+
+int displayMenu() {
+
+  int selection;
+
+  cout << endl;
+
+  cout << "Clients Database" << endl;
+
+  cout << "-----------------" << endl;
+
+  cout << "1) Create a new Account of Client" << endl;
+
+  cout << "2) Delete an Account of Client" << endl;
+
+  cout << "3) Change subscription price" << endl;
+
+  cout << "4) List all Clients" << endl;
+
+  cout << "5) List all current Clients" << endl;
+
+  cout << "6) List all previous Clients" << endl;
+
+  cout << "7) List all Males" << endl;
+
+  cout << "8) List all Females" << endl;
+
+  cout << "0) Quit" << endl;
+
+  cout << endl;
+
+
+
+  cout << "---> ";
+
+  cin >> selection;
+
+  return selection;
+
+}
+
+void doHire(Database &inDB) {
+
+  ClientData clientData;
+
+
+
+  cout << "First name? ";
+
+  cin >> clientData.inFirstName;
+
+  cout << "Last name? ";
+
+  cin >> clientData.inLastName;
+
+
+
+  do {
+
+    string age;
+
+    cout << "Your age? ";
+
+    cin >>age;
+
+    clientData.inClientAge=std::stoi(age);
+
+    if (clientData.inClientAge >= 18) {
+
+      break;
+
+    } else {
+
+      cout << "You must be at leat 18!!\n";
+
+    }
+
+  } while (true);
+
+  do {
+
+    std::cout << "Gender (male/female)? ";
+
+    std::cin >> clientData.inGender;
+
+
+
+    // Перевірка, чи введено допустиме значення
+
+    if (clientData.inGender != "male" && clientData.inGender != "female") {
+
+      std::cout << "Invalid input. Please enter 'male' or 'female'."
+
+                << std::endl;
+
+    }
+
+  } while (clientData.inGender != "male" && clientData.inGender != "female");
+
+
+
+  std::cout << "Selected gender: " << clientData.inGender << std::endl;
+
+
+
+  cout << "Height (cm)? ";
+
+  cin >> clientData.inHeight;
+
+
+
+  cout << "Weight (kg)? ";
+
+  cin >> clientData.inWeight;
+
+
+
+  cout << "Number of children? ";
+
+  cin >> clientData.inChildrenCount;
+
+
+
+  cout << "Marital status? ";
+
+  cin >> clientData.inMaritalStatus;
+
+
+
+  cout << "Harmful habits? ";
+
+  cin >> clientData.inHarmfulHabits;
+
+
+
+  cout << "Hobbies? ";
+
+  cin.ignore(); // Clear newline character from previous input
+
+  getline(cin, clientData.inHobbies);
+
+
+
+  cout << "Description? ";
+
+  cin.ignore(); // Clear newline character from previous input
+
+  getline(cin, clientData.inDescription);
+
+
+
+  cout << "Zodiac Sign Code? ";
+
+  cin >> clientData.inZodiacSignCode;
+
+
+
+  cout << "Relationship Code? ";
+
+  cin >> clientData.inRelationshipCode;
+
+
+
+  cout << "Nationality Code? ";
+
+  cin >> clientData.inNationalityCode;
+
+
+
+  cout << "Address? ";
+
+  cin.ignore(); // Clear newline character from previous input
+
+  getline(cin, clientData.inAddress);
+
+
+
+  cout << "Phone Number? ";
+
+  cin >> clientData.inPhoneNumber;
+
+
+
+  cout << "Passport Data? ";
+
+  cin.ignore(); // Clear newline character from previous input
+
+  getline(cin, clientData.inPassportData);
+
+
+
+  cout << "Partner Preference? ";
+
+  cin.ignore(); // Clear newline character from previous input
+
+  getline(cin, clientData.inPartnerPreference);
+
+
+
+  try {
+
+    inDB.addClient(clientData);
+
+  } catch (const std::exception &ex) {
+
+    cerr << "Unable to add new Client!" << endl;
+
+  }
+
+}
+
+void doFire(Database &inDB) {
+
+  string client_Number;
+
+  cout << "Client number? ";
+
+  cin >> client_Number;
+
+
+
+  int clientNumber = std::stoi(client_Number);
+
+
+
+  try {
+
+    Client &emp = inDB.getClient(clientNumber);
+
+    emp.fire();
+
+    cout << "Client " << clientNumber << " has been terminated." << endl;
+
+  } catch (const std::invalid_argument &e) {
+
+    std::cerr << "Invalid argument: " << e.what() << std::endl;
+
+  } catch (const std::out_of_range &e) {
+
+    std::cerr << "Out of range: " << e.what() << std::endl;
+
+  } catch (const std::exception &ex) {
+
+    cerr << "Unable to terminate employee!" << endl;
+
+  }
+
+}
+
+void doPromote(Database &inDB) {
+
+  string client_Number;
+
+  string new_Amount;
+
+  cout << "Client number? ";
+
+  cin >> client_Number;
+
+  int clientNumber = std::stoi(client_Number);
+
+  cout << "Do you want to increase or decrease the subscription price? \nEnter "
+
+          "i for increase or d for decrease: ";
+
+
+
+  bool flag = false;
+
+  while (!flag) {
+
+    char choice;
+
+    cin >> choice;
+
+    choice = tolower(choice);
+
+    if (choice == 'i') {
+
+      cout << "Increase subscribe price on: ";
+
+      cin >> new_Amount;
+
+      int newAmount = std::stoi(new_Amount);
+
+      flag = true;
+
+      try {
+
+        Client &emp = inDB.getClient(clientNumber);
+
+        emp.promote(newAmount);
+
+      } catch (...) {
+
+        cerr << "Unable to promote Client! " << endl;
+
+      }
+
+    } else if (choice == 'd') {
+
+      cout << "Decrease subscribe price on: ";
+
+      cin >> new_Amount;
+
+      int newAmount = std::stoi(new_Amount);
+
+      flag = true;
+
+      try {
+
+        Client &emp = inDB.getClient(clientNumber);
+
+        emp.demote(newAmount);
+
+      } catch (...) {
+
+        cerr << "Unable to demote Client! " << endl;
+
+      }
+
+
+
+    } else {
+
+      cout << "Enter 'i' for increase or 'd' for decrease: ";
+
+    }
+
+  }
+
+}
+
+//main.cpp
+
+#include "UserInterface.h" // Підключення вашого файлу UserInterface.cpp
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char **argv) {
+
+  Database clientDB;
+
+  bool done = false;
+
+  ClientData client1 = {"Ivan",
+
+                        "Petrov",
+
+                        25,
+
+                        "male",
+
+                        175,
+
+                        70,
+
+                        0,
+
+                        "Married",
+
+                        "No",
+
+                        "Reading",
+
+                        "I love traveling",
+
+                        "Aquarius",
+
+                        "Single",
+
+                        "Ukrainian",
+
+                        "Kyiv, Main St, 123",
+
+                        "+380987654321",
+
+                        "AA123456",
+
+                        "No partner"};
+
+
+
+  ClientData client2 = {"Elena",
+
+                        "Smith",
+
+                        30,
+
+                        "female",
+
+                        165,
+
+                        55,
+
+                        1,
+
+                        "Single",
+
+                        "No",
+
+                        "Painting",
+
+                        "I enjoy cooking",
+
+                        "Cancer",
+
+                        "Single",
+
+                        "American",
+
+                        "New York, Elm St, 456",
+
+                        "+11234567890",
+
+                        "BB654321",
+
+                        "No partner"};
+
+  ClientData client3 = {"John",
+
+                        "Doe",
+
+                        40,
+
+                        "male",
+
+                        180,
+
+                        80,
+
+                        2,
+
+                        "Divorced",
+
+                        "Yes",
+
+                        "Sports",
+
+                        "Music lover",
+
+                        "Taurus",
+
+                        "Single",
+
+                        "British",
+
+                        "London, Park Ave, 789",
+
+                        "+442233445566",
+
+                        "CC789012",
+
+                        "No partner"};
+
+  ClientData client4 = {"Maria",
+
+                        "Gonzalez",
+
+                        28,
+
+                        "female",
+
+                        160,
+
+                        50,
+
+                        0,
+
+                        "Single",
+
+                        "No",
+
+                        "Dancing",
+
+                        "I'm a foodie",
+
+                        "Gemini",
+
+                        "Single",
+
+                        "Spanish",
+
+                        "Madrid, Plaza Mayor, 567",
+
+                        "+34987654321",
+
+                        "DD567890",
+
+                        "No partner"};
+
+  ClientData client5 = {"Michael",
+
+                        "Kim",
+
+                        35,
+
+                        "male",
+
+                        175,
+
+                        75,
+
+                        1,
+
+                        "Married",
+
+                        "Yes",
+
+                        "Gaming",
+
+                        "Tech enthusiast",
+
+                        "Libra",
+
+                        "Married",
+
+                        "Korean",
+
+                        "Seoul, Tech St, 890",
+
+                        "+822233344455",
+
+                        "EE678901",
+
+                        "Spouse"};
+
+
+
+  clientDB.addClient(client1);
+
+  clientDB.addClient(client2);
+
+  clientDB.addClient(client3);
+
+  clientDB.addClient(client4);
+
+  clientDB.addClient(client5);
+
+  ClientData *client6 = new ClientData();
+
+  client6->inFirstName = "Maria";
+
+  client6->inLastName = "Sidorova";
+
+  client6->inClientAge = 28;
+
+  client6->inGender = "female";
+
+  client6->inHeight = 162;
+
+  client6->inWeight = 55;
+
+  client6->inChildrenCount = 1;
+
+  client6->inMaritalStatus = "Single";
+
+  client6->inHarmfulHabits = "Yes";
+
+  client6->inHobbies = "Painting";
+
+  client6->inDescription = "I love music";
+
+  client6->inZodiacSignCode = "Pisces";
+
+  client6->inRelationshipCode = "In a relationship";
+
+  client6->inNationalityCode = "Ukrainian";
+
+  client6->inAddress = "Lviv, Central St, 45";
+
+  client6->inPhoneNumber = "+380955555555";
+
+  client6->inPassportData = "BB654321";
+
+  client6->inPartnerPreference = "Looking for a relationship";
+
+
+
+  clientDB.addClient(*client6);
+
+
+
+  ClientData *client7 = new ClientData();
+
+  client7->inFirstName = "James";
+
+  client7->inLastName = "Smith";
+
+  client7->inClientAge = 32;
+
+  client7->inGender = "male";
+
+  client7->inHeight = 180;
+
+  client7->inWeight = 75;
+
+  client7->inChildrenCount = 0;
+
+  client7->inMaritalStatus = "Single";
+
+  client7->inHarmfulHabits = "No";
+
+  client7->inHobbies = "Playing guitar";
+
+  client7->inDescription = "Love outdoor activities";
+
+  client7->inZodiacSignCode = "Leo";
+
+  client7->inRelationshipCode = "Single";
+
+  client7->inNationalityCode = "American";
+
+  client7->inAddress = "New York, Broadway St, 789";
+
+  client7->inPhoneNumber = "+112233445566";
+
+  client7->inPassportData = "CC123456";
+
+  client7->inPartnerPreference = "Looking for a partner";
+
+
+
+  clientDB.addClient(*client7);
+
+  ClientData *client8 = new ClientData();
+
+  client8->inFirstName = "Anna";
+
+  client8->inLastName = "Müller";
+
+  client8->inClientAge = 27;
+
+  client8->inGender = "female";
+
+  client8->inHeight = 168;
+
+  client8->inWeight = 60;
+
+  client8->inChildrenCount = 0;
+
+  client8->inMaritalStatus = "Single";
+
+  client8->inHarmfulHabits = "No";
+
+  client8->inHobbies = "Reading";
+
+  client8->inDescription = "Passionate about travel";
+
+  client8->inZodiacSignCode = "Libra";
+
+  client8->inRelationshipCode = "Single";
+
+  client8->inNationalityCode = "German";
+
+  client8->inAddress = "Berlin, Hauptstrasse, 123";
+
+  client8->inPhoneNumber = "+491234567890";
+
+  client8->inPassportData = "DD987654";
+
+  client8->inPartnerPreference = "Looking for a serious relationship";
+
+
+
+  clientDB.addClient(*client8);
+
+  ClientData *client9 = new ClientData();
+
+  client9->inFirstName = "Alex";
+
+  client9->inLastName = "Garcia";
+
+  client9->inClientAge = 35;
+
+  client9->inGender = "male";
+
+  client9->inHeight = 175;
+
+  client9->inWeight = 70;
+
+  client9->inChildrenCount = 1;
+
+  client9->inMaritalStatus = "Married";
+
+  client9->inHarmfulHabits = "No";
+
+  client9->inHobbies = "Cooking";
+
+  client9->inDescription = "Enjoy family time";
+
+  client9->inZodiacSignCode = "Cancer";
+
+  client9->inRelationshipCode = "Married";
+
+  client9->inNationalityCode = "Spanish";
+
+  client9->inAddress = "Madrid, Plaza España, 567";
+
+  client9->inPhoneNumber = "+34987654321";
+
+  client9->inPassportData = "EE123456";
+
+  client9->inPartnerPreference = "Not looking for a partner";
+
+
+
+  clientDB.addClient(*client9);
+
+  ClientData *client10 = new ClientData();
+
+  client10->inFirstName = "John";
+
+  client10->inLastName = "Johnson";
+
+  client10->inClientAge = 30;
+
+  client10->inGender = "male";
+
+  client10->inHeight = 185;
+
+  client10->inWeight = 80;
+
+  client10->inChildrenCount = 2;
+
+  client10->inMaritalStatus = "Divorced";
+
+  client10->inHarmfulHabits = "Yes";
+
+  client10->inHobbies = "Playing sports";
+
+  client10->inDescription = "Passionate about music";
+
+  client10->inZodiacSignCode = "Scorpio";
+
+  client10->inRelationshipCode = "Single";
+
+  client10->inNationalityCode = "British";
+
+  client10->inAddress = "London, Park Lane, 456";
+
+  client10->inPhoneNumber = "+441234567890";
+
+  client10->inPassportData = "FF123456";
+
+  client10->inPartnerPreference = "Looking for a serious relationship";
+
+
+
+  clientDB.addClient(*client10);
+
+
+
+  while (!done) {
+
+    int selection = displayMenu();
+
+    switch (selection) {
+
+    case 1:
+
+      doHire(clientDB);
+
+      break;
+
+    case 2:
+
+      doFire(clientDB);
+
+      break;
+
+    case 3:
+
+      doPromote(clientDB);
+
+      break;
+
+    case 4:
+
+      clientDB.displayAll();
+
+      break;
+
+    case 5:
+
+      clientDB.displayCurrent();
+
+      break;
+
+    case 6:
+
+      clientDB.displayFormer();
+
+      break;
+
+    case 7:
+
+      clientDB.displayMale();
+
+      break;
+
+    case 8:
+
+      clientDB.displayFemale();
+
+      break;
+
+    case 0:
+
+      done = true;
+
+      break;
+
+    default:
+
+      cerr << "Unknown command." << endl;
+
+    }
+
+  }
+
+  delete client6;
+
+  delete client7;
+
+  delete client8;
+
+  delete client9;
+
+  delete client10;
+
+}
+//MakeFile
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp UserInterface.cpp Client.cpp Database.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=main
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+clean:
+	rm -f $(OBJECTS) $(EXECUTABLE)

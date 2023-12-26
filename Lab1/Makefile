@@ -4,6 +4,7 @@ CFLAGS=-c -Wall
 
 CDLFLAGS=-c -Wall -fPIC
 
+
 LIBSOURCES=Client.cpp Database.cpp UserInterface.cpp
 LIBOBJECTS=$(LIBSOURCES:.cpp=.o)
 
@@ -14,6 +15,7 @@ EXECUTABLE=start
 
 STATICLIB=libloader.a
 DYNAMICLIB=libloader.so
+
 
 all:
 
@@ -33,3 +35,4 @@ dynamic:
 
 clean:
 	rm -f $(MAINOBJECT) $(LIBOBJECTS) $(EXECUTABLE) $(STATICLIB) $(DYNAMICLIB)
+
